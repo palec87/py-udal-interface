@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "py-udal-interface"
+version = "0.1.0"
+description = "Uniform Data Access Layer (UDAL) specification."
+authors = [
+    "Jorge Mendes <jorge.mendes@vliz.be>",
+]
+license = "MIT"
+readme = "README.md"
+packages = [
+    {include = "udal"},
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
