@@ -7,6 +7,7 @@ ParamType = Union[
     Literal['null', 'str', 'number', 'boolean'],
     Tuple[Literal['literal'], str | int | float],
     Tuple[Literal['list'], 'ParamType'],
+    Tuple[Literal['tuple'], 'ParamType'],
     Tuple[Literal['dict'], Literal['str'], 'ParamType'],
 ]
 """Description of the type of a parameter."""
@@ -18,6 +19,9 @@ def tliteral(l: str | int | float) -> ParamType:
 
 def tlist(pt: ParamType) -> ParamType:
     return ('list', pt)
+
+def ttuple(pt: ParamType) -> ParamType:
+    return ('tuple', pt)
 
 def tdict(pt: ParamType) -> ParamType:
     return ('dict', 'str', pt)
